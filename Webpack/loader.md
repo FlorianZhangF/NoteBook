@@ -21,7 +21,7 @@
 ### 安装 postcss-loader和autoprefixer
 ### 使用 
 #### 在根目录下新建文件postcss.config.js
-#### 输入以下内容即可，不用改webpack.config.js
+#### 输入以下内容
 ```
 module.exports={
     plugins:[
@@ -31,3 +31,17 @@ module.exports={
     ]
 };
 ```
+#### 然后在css加载器那边最后加上postcss-loader即可
+```
+{
+    test:/\.css$/,
+    loaders:[
+        'style-loader',
+        'css-loader',
+        'postcss-loader'
+    ]
+}
+```
+
+### 'css-loader?importLoaders=1' 加上importLoaders参数会将import进来的样式也进行postcss处理
+
