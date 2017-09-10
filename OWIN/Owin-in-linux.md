@@ -151,3 +151,4 @@ public class UserModel     //用于测试post
 #### 10、通过jexus运行我们的网站
 #### sudo /usr/jexus/jws start OwinSelfhostSample
 #### 11、网站启动成功后，使用postman测试下webapi，成功获取到数据
+#### 12、参考网址：http://www.cnblogs.com/zergcom/p/4619106.html
