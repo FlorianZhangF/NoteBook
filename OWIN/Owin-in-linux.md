@@ -42,7 +42,7 @@ public class Startup
 }
 ```
 
-#### 5、新建类库Adapter.cs，建立Jexus适配器代码
+#### 5、新建类库Adapter.cs，建立Jexus适配器代码（我是先在windows上跑起来，再新建的这个适配器，如果windows上出现问题，可以先把这个删了试试）
 ```
 public class Adapter
 {
