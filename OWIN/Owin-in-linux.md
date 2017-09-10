@@ -140,6 +140,14 @@ public class UserModel     //用于测试post
 #### 5、将项目目录下bin-Release中的内容，通过FileZilla复制到Linux默认的vsftpd目录home/ftpadmin下，这里建议新建一个bin目录，直接将bin-Release中的内容复制到home/ftpadmin/bin中（因为部署到Linux中的网站目录下需要一个bin文件夹，到时直接复制过去就行）
 #### 6、安装jexus独立版（整合了Mono，不需要另外安装Mono），安装方法参考：http://www.cnblogs.com/yunei/p/5452120.html
 #### 7、进入jexus目录下的siteconf文件夹，这里面就是网站配置文件，默认有一个default（如果要用80端口，直接编辑这个文件即可），我们这边将default复制一份，文件名为OwinSelfhostSample
-其中的内容只需要改前面部分：
-port=9000
-root=
+#### 其中的内容只需要改前面部分：
+#### port=9000
+#### root=/var/www/OwinSelfhostSample   #这个是网站文件目录，过会再创建
+#### hosts=*
+#### OwinMain=OwinSelfhostSample.dll,OwinSelfhostSample.Adapter   #这一行是新增的，也是必须的
+#### 其他部分不用改，保存即可
+#### 8、进入/var/www目录，创建我们的网站目录OwinSelfhostSample
+#### 9、将通过vsftpd传上来的文件夹bin复制到OwinSelfhostSample下面，目录结构：/var/www/OwinSelfhostSample/bin/我们本地Release中的所有文件
+#### 10、通过jexus运行我们的网站
+#### sudo /usr/jexus/jws start OwinSelfhostSample
+#### 11、网站启动成功后，使用postman测试下webapi，成功获取到数据
