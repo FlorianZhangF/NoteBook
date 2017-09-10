@@ -146,9 +146,10 @@ public class UserModel     //用于测试post
 #### hosts=*
 #### OwinMain=OwinSelfhostSample.dll,OwinSelfhostSample.Adapter   #这一行是新增的，也是必须的
 #### 其他部分不用改，保存即可
-#### 8、进入/var/www目录，创建我们的网站目录OwinSelfhostSample
-#### 9、将通过vsftpd传上来的文件夹bin复制到/var/www/OwinSelfhostSample下面，目录结构：/var/www/OwinSelfhostSample/bin/我们本地Release中的所有文件
-#### 10、通过jexus运行我们的网站
+#### 8、Linux也需要开放9000端口，具体方法请自行google
+#### 9、进入/var/www目录，创建我们的网站目录OwinSelfhostSample
+#### 10、将通过vsftpd传上来的文件夹bin复制到/var/www/OwinSelfhostSample下面，目录结构：/var/www/OwinSelfhostSample/bin/我们本地Release中的所有文件
+#### 11、通过jexus运行我们的网站
 #### sudo /usr/jexus/jws start OwinSelfhostSample
-#### 11、网站启动成功后，使用postman测试下webapi，成功获取到数据
-#### 12、参考网址：http://www.cnblogs.com/zergcom/p/4619106.html
+#### 12、网站启动成功后，使用postman测试下webapi，成功获取到数据
+#### 13、参考网址：http://www.cnblogs.com/zergcom/p/4619106.html
