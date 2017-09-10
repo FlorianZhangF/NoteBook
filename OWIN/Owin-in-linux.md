@@ -137,7 +137,7 @@ public class UserModel     //用于测试post
 #### passwd ftpadmin 设置ftpadmin的密码，设置完后就可以使用ftpadmin这个账户登录使用ftp了
 #### 3、开发电脑（我的是windows10），安装ftp工具，我安装的是FileZilla，安装完后连接Linux服务器，vsftpd的默认端口是21
 #### 4、在VS中，“生成”-“配置管理器”，将本项目OwinSelfhostSample的配置改成“Release”（这一步不知道是不是必要的），再生成一次项目
-#### 5、将项目目录下bin-Release中的内容，通过FileZilla复制到Linux默认的vsftpd目录home/ftpadmin下，这里建议新建一个bin目录，直接将bin-Release中的内容复制到home/ftpadmin/bin中（因为部署到Linux中的网站目录下需要一个bin文件夹，到时直接复制过去就行）
+#### 5、将项目目录下bin/Release中的内容，通过FileZilla复制到Linux默认的vsftpd目录home/ftpadmin下，这里建议新建一个bin目录，直接将bin-Release中的内容复制到home/ftpadmin/bin中（因为部署到Linux中的网站目录下需要一个bin文件夹，到时直接复制过去就行）
 #### 6、安装jexus独立版（整合了Mono，不需要另外安装Mono），安装方法参考：http://www.cnblogs.com/yunei/p/5452120.html
 #### 7、进入jexus目录下的siteconf文件夹，这里面就是网站配置文件，默认有一个default（如果要用80端口，直接编辑这个文件即可），我们这边将default复制一份，文件名为OwinSelfhostSample
 #### 其中的内容只需要改前面部分：
