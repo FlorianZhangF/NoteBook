@@ -135,7 +135,7 @@ public class UserModel     //用于测试post
 #### vi /etc/vsftpd/vsftpd.conf 编辑vsftpd的配置文件 具体配置自行百度，我这边只进行了禁止匿名用户的访问，不编辑用默认配置也可以
 #### useradd ftpadmin -s /sbin/nologin 添加用户ftpadmin
 #### passwd ftpadmin 设置ftpadmin的密码，设置完后就可以使用ftpadmin这个账户登录使用ftp了
-#### 3、开发电脑（我的是windows10），安装ftp工具，我安装的是FileZilla，安装完后连接Linux服务器
+#### 3、开发电脑（我的是windows10），安装ftp工具，我安装的是FileZilla，安装完后连接Linux服务器，vsftpd的默认端口是21
 #### 4、在VS中，“生成”-“配置管理器”，将本项目OwinSelfhostSample的配置改成“Release”（这一步不知道是不是必要的），再生成一次项目
 #### 5、将项目目录下bin-Release中的内容，通过FileZilla复制到Linux默认的vsftpd目录home/ftpadmin下，这里建议新建一个bin目录，直接将bin-Release中的内容复制到home/ftpadmin/bin中（因为部署到Linux中的网站目录下需要一个bin文件夹，到时直接复制过去就行）
 #### 6、安装jexus独立版（整合了Mono，不需要另外安装Mono），安装方法参考：http://www.cnblogs.com/yunei/p/5452120.html
