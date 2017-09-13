@@ -37,7 +37,7 @@ SELECT * FROM V_testTB
 ```
 得到结果：
 
-
+![错误信息](http://img.my.csdn.net/uploads/201212/24/1356357357_5124.png)
 
 
 ### 步骤二：更改表结构
@@ -53,7 +53,7 @@ SELECT * FROM V_testTB
 ```
 得到结果：
 
-
+![错误信息](http://img.my.csdn.net/uploads/201212/24/1356357516_4941.png)
 
 反复执行了10次，结果还是没变。
 
@@ -69,7 +69,7 @@ SELECT * FROM V_testTB
 ```
 眼前一亮，得到结果：
 
-
+![错误信息](http://img.my.csdn.net/uploads/201212/24/1356357631_1901.png)
 
 可以看出，结构已经刷新，证明有效果了。
 
@@ -105,7 +105,7 @@ SELECT * FROM V_testTB
  1、视图里面尽可能不要出现*号。*号不仅对性能有影响，也不便于结构的更新。
        
  2、无论视图所涉及的表结构有无修改，每次执行脚本后，刷新一下，总是好的。并且我遇到过这样的情景，一个名字是存储过程的名字，但是在使用：
-
+```
 [sql] view plain copy print?
 SELECT DISTINCT  
         'EXEC sp_refreshview ''' + name + ''''  
@@ -113,5 +113,5 @@ FROM    sys.objects AS so
         INNER JOIN sys.sql_expression_dependencies AS sed ON so.object_id = sed.referencing_id  
 WHERE   so.type = 'V'  
         AND sed.referenced_id = OBJECT_ID('testTB') ;  
-
+```
 下面语句中时竟然能查出来，证明定义的时候有问题，所以这一步也同时可以检查一下会不会存在问题对象。顺带说一句，上面的脚本是把需要刷新的视图拼接出来，然后一次性执行。
